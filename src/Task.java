@@ -40,6 +40,8 @@ public class Task {
 }
 
 class Person {
+    private static final String TPL_AS_STRING = "%s %s, %d, email: %s";
+
     private String name;
     private String surname;
     private int age;
@@ -66,6 +68,10 @@ class Person {
 
     public String getEmail() {
         return email;
+    }
+
+    public String toString() {
+        return String.format(TPL_AS_STRING, this.getName(), this.getSurname(), this.getAge(), this.getEmail());
     }
 
 }
