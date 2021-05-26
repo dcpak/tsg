@@ -12,6 +12,11 @@ public class Task {
 
     private static final String REGEXP_EMAIL = "(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|\"(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21\\x23-\\x5b\\x5d-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])*\")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21-\\x5a\\x53-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])+)\\])";
 
+    /**
+     * RegExp niedopuszczalnej domeny e-maila
+     */
+    private static final String REGEXP_EXCLUDED_DOMAIN = "^.*tsg\\.pl$";
+
     // don't modify main method
     public static void main(String[] args) {
         List<Person> participants = getParticipantsFromCsvFile();
@@ -40,12 +45,14 @@ public class Task {
      */
     private static List<Person> getValidParticipants(List<Person> participants) {
         Pattern patternEmail = Pattern.compile(REGEXP_EMAIL);
+        Pattern patternExcludedEmail = Pattern.compile(REGEXP_EXCLUDED_DOMAIN);
         List<Person> validParticipants = participants.stream()
                 .filter(participant ->
                         participant.getAge() >= MIN_AGE
                                 && Character.isUpperCase(participant.getName().charAt(0))
                                 && Character.isUpperCase(participant.getSurname().charAt(0))
                                 && patternEmail.matcher(participant.getEmail()).matches()
+                                && !patternExcludedEmail.matcher(participant.getEmail()).matches()
                 )
                 .collect(Collectors.toList());
         return validParticipants;
