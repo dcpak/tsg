@@ -1,0 +1,20 @@
+----------------------------------
+Day 1 - PL
+----------------------------------
+W konkursie zarejestrowało się wielu kandydatów! Niestety z niewiadomych przyczyn system nie wyświetla poprawnie danych tych osób...
+Każda osoba powinna być wyświetlona w podanej postaci:
+    ${name} ${surname}, ${age}, email: ${email}
+    Mickey Mouse, 17, email: micm@disney.com
+
+UWAGA: Nie zmieniaj metod "main" oraz "getParticipantsFromCsvFile"
+
+----------------------------------
+Day 1 - ENG
+----------------------------------
+
+In our tournament a lot of candidates have been registered! Unfortunately for some reason registration system doesn't display data of candidates properly...
+Each person should be displayed as:
+    ${name} ${surname}, ${age}, email: ${email}
+    Mickey Mouse, 17, email: micm@disney.com
+
+Please note! Don't change anything in "main" nor "getParticipantsFromCsvFile" methods.
