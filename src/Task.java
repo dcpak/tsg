@@ -1,5 +1,6 @@
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
@@ -29,6 +30,7 @@ public class Task {
      */
     private static List<Person> andTheWinnersAre(List<Person> participants) {
         List<Person> validParticipants = getValidParticipants(participants);
+        Collections.shuffle(validParticipants);
         return validParticipants;
     }
 
