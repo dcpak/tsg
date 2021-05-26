@@ -1,0 +1,21 @@
+----------------------------------
+Day 3 - PL
+----------------------------------
+Lista wyraźnie się pomniejszyła...
+W ostatniej chwili przed rozpoczęciem konkursu organizator przypomniał sobie, że zasady gry będą wysłane na podane maile!
+Z tego powodu zdyskwalifikowani (usunięci z listy) zostaną wszyscy, których mail nie ma właściwej formy.
+Dostosuj program do nowego wymagań.
+
+UWAGA: Nie zmieniaj metod "main" oraz "getParticipantsFromCsvFile"
+
+
+----------------------------------
+Day 3 - ENG
+----------------------------------
+
+List decreased noticabely now...
+In the last moment before tournament start founder just realized that game rules will be sent to candidates on given emails! Because of that all candidates who made typos/mistakes in their email form/rules will be disqualified (removed from the list).
+
+Adapt your program to new requirmenets.
+
+Please note! Don't change anything in "main" nor "getParticipantsFromCsvFile" methods.
