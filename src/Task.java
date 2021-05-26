@@ -1,8 +1,13 @@
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Task {
+    /**
+     * Minimalny wiek dopuszczający uczestnika do konkursu (lata)
+     */
+    private static int MIN_AGE = 18;
 
     // don't modify main method
     public static void main(String[] args) {
@@ -13,8 +18,32 @@ public class Task {
         winners.forEach(System.out::println);
     }
 
+    /**
+     * Zwraca listę zwycięzców
+     *
+     * @param participants Lista uczestników
+     * @return Lista zwycięzców
+     */
     private static List<Person> andTheWinnersAre(List<Person> participants) {
-        return participants;
+        List<Person> validParticipants = getValidParticipants(participants);
+        return validParticipants;
+    }
+
+    /**
+     * Zwraca listę uczestników, którzy podali prawidłowe informacje osobiste i spełniają warunki uczestnictwa w konkursie
+     *
+     * @param participants Lista uczestników
+     * @return Lista uczestników kwalifikujących się do konkursu
+     */
+    private static List<Person> getValidParticipants(List<Person> participants) {
+        List<Person> validParticipants = participants.stream()
+                .filter(participant ->
+                        participant.getAge() >= MIN_AGE
+                                && Character.isUpperCase(participant.getName().charAt(0))
+                                && Character.isUpperCase(participant.getSurname().charAt(0))
+                )
+                .collect(Collectors.toList());
+        return validParticipants;
     }
 
     // don't modify getParticipantsFromCsvFile method

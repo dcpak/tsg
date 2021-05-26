@@ -1,0 +1,21 @@
+----------------------------------
+Day 2 - PL
+----------------------------------
+System wyświetla poprawnie dane kandydatów! Okazało się jednak, iż osoby poniżej 18 roku życia nie mogą wziąć udziału w konkursie.
+Poza tym system odrzuca tych, którzy wpisali swoje imię lub nazwisko z małej litery.
+Dostosuj program do nowych wymagań.
+
+UWAGA: Nie zmieniaj metod "main" oraz "getParticipantsFromCsvFile"
+
+
+
+----------------------------------
+Day 2 - ENG
+----------------------------------
+
+System displayes correctly candidates data now! But it turned out, that people below 18yo can't participate in this tournament.
+Apart from that, system removes all people who put their name or surname lowercase (should start with capital letter).
+
+Adapt your software to new requirements
+
+Please note! Don't change anything in "main" nor "getParticipantsFromCsvFile" methods.
